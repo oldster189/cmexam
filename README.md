@@ -14,16 +14,16 @@
  - Home Page
  - Detail Page
 
-2.1 ค่าเริ่มต้น Rediect มาหน้า Login Page
+2.1 ค่าเริ่มต้น Redirect มาหน้า Login Page
 
 <b>3. หน้า Login Page มี UI ตามนี้</b>
 
-3.1 ช่องกรอกข้อมูล (Email, Password)
+3.1 ช่อง input กรอกข้อมูล (Email, Password)
 
 3.2 ปุ่มเข้าสู่ระบบ
 
 3.3 เงื่อนไขตรวจสอบ
-     - เมื่อกดปุ่มเข้าสู่ระบบ ตรวจสอบ Email = aa@bb.cc และ Password = 1234 ถ้าถูกต้อง Redirect ไปหน้า Home Page , ถ้าผิด Alert ข้อความ "Email or password incorrect"
+     - เงื่อนไขตรวจสอบ - เมื่อกดปุ่มเข้าสู่ระบบ ตรวจสอบ Email = aa@bb.cc และ Password = 1234 ถ้าถูกต้อง Redirect ไปหน้า Home Page , ถ้าผิดให้ Alert ข้อความ "Email or password incorrect"
 
 <b>4. หน้า Home Page มีเงื่อนไขตามนี้</b>
 
@@ -31,9 +31,9 @@
 
 4.2 แปลงข้อมูล JSON ข้อ 4.1 เป็น Typescript Interface (ชื่อ interface Product) 
 
-4.3 มีการใช้ useState เก็บข้อมูล products จาก Fetch 
+4.3 มีการใช้ useState เก็บข้อมูล products จากการ Fetch ข้อ 4.1
 
-4.4 แสดงข้อมูลที่ Fetch ได้ แสดง Column ตารางดังนี้
+4.4 แสดงข้อมูลที่ Fetch ได้เป็น Table มี Column ดังนี้
   - Thumnal 30*30
   - Title
   - Price
@@ -52,16 +52,16 @@
   - Price
   - Stock
   
-<b>6. ปริ้น Console.log Life Cycle ของ Reactjs ในหน้า Home Page </b>
+<b>6. ปริ้นข้อความใน  Life Cycle ต่างๆ ของ Reactjs ในหน้า Home Page </b>
 
-<b>7. เพิ่ม ช่องค้นหาข้อมูลสินค้า (ค้นหา ชื่อสินค้า) </b>
+<b>7. เพิ่ม input ช่องค้นหาข้อมูลสินค้า (ค้นหา ชื่อสินค้า)) </b>
 
 7.1 ค้นหาแบบ Debound Time(1 วินาที) และ contain string
  
 <b>8. เพิ่มปุ่ม Dropdown 5 เมนู ในหน้า Home Page</b>
   - ทั้งหมด (แสดงสินค้าทั้งหมด)
   - ราคามากว่า 1000 (กรองสินค้าที่มีราคา 1000 ขึ้นไป) [ใช้ function Filter Javascript]
-  - แสดงราคารวมต่อชิ้น (คำนวนราคาสินค้า ราคา*จำนวนสินค้า)  ** เพิ่ม Column ขึ้นมาอีก 1 Column สำหรับแสดง ราคารวมต่อชิ้น  [ใช้ function Map Javascript]
+  - แสดงราคารวมต่อชิ้น (คำนวนราคาสินค้า ราคา*จำนวนสินค้า) ** เพิ่ม Column ขึ้นมาอีก 1 Column สำหรับแสดง ราคารวมต่อชิ้น [ใช้ function Map Javascript เพิ่ม key totalPrice เข้าไปใน interface Product เพื่อแสดงใน column]
   - เรียงเรตติ้ง (เรียง rating สินค้า desc)  [ใช้  function Sort Javascript]
   - แสดงราคารวมทั้งหมด (คำนวนราคาสินค้าทั้งหมด ของ array สินค้า) ** เพิ่ม Label ไว้บนท้ายตารางสำหรับแสดง ราคารวมทั้งหมด  [ใช้ function reduce Javascript]
 
@@ -71,11 +71,11 @@
 
 <b>10. Interceptor http axios</b>
 
-10.1 console.log ข้อความ ตอน Request http
+10.1 ปริ้นข้อความ “request” ตอน Request http
 
-10.2 console.log ข้อความ ตอน Response http
+10.2 ปริ้นข้อความ “response” ตอน Response http
 
-<b>11. กำหนด Default route path เมื่อพิมพ์ url route path ผิด</b>
+<b>11. กำหนดค่าเริ่มต้น Route path เมื่อพิมพ์ url path ผิด หรือไม่มีอยู่ใน route ที่กำหนด ให้ทำเงื่อนไขตามนี้</b>
 
 11.1 ถ้า ยังไม่ได้ Login ให้ Redirect มาหน้า Login Page
 
@@ -91,13 +91,13 @@
 
 13.2 Init default value email = bb@cc.dd & password = 5678
 
-13.3 เปลี่ยนการตรวจความถูกต้องหน้า Login Page ให้ดึงข้อมูลใน authStore มาตรวจสอบ Email & Password กับ Input text
+13.3 เปลี่ยนการตรวจความถูกต้องในหน้า Login Page ให้ดึงข้อมูลใน authStore มาตรวจสอบ Email & Password กับ Input form ที่กรอกเอง
 
 <b>14. Create react hook</b>
 
 14.1 สร้างชื่อ hook useMultiply Logic ภายใน รับค่าใดๆ เข้ามาแล้วคูณด้วย 10 และ Return ออกไป
 
-14.2 Print ผลลัพพ์หน้า Home Page
+14.2 log ผลลัพพ์หน้า Home Page
 
 <b>15. แสดงตัวอย่างการใช้ useMemo และ useCallback ในหน้า Home Page</b>
  
